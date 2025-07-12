@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/utils/cn";
+import Image from "next/image";
 
 export const StickyScroll = ({
   content,
@@ -61,10 +62,8 @@ export const StickyScroll = ({
 
   return (
     <motion.div
-      animate={{
-        backgroundColor: backgroundColors[activeCard % backgroundColors.length],
-      }}
-      className="h-[30rem] overflow-y-auto flex justify-center relative space-x-10 rounded-md p-10"
+
+      className="bg-black flex justify-center relative space-x-10 rounded-md p-10"
       ref={ref}
     >
       <div className="div relative flex items-start px-4">
@@ -74,6 +73,10 @@ export const StickyScroll = ({
               <motion.h2
                 initial={{
                   opacity: 0,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  transition: { duration: 0.5, delay: 0.2 },
                 }}
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
@@ -85,6 +88,11 @@ export const StickyScroll = ({
               <motion.p
                 initial={{
                   opacity: 0,
+
+                }}
+                whileInView={{
+                  opacity: 1,
+                  transition: { duration: 0.5, delay: 0.2 },
                 }}
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
@@ -101,11 +109,13 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-60 w-80 rounded-md bg-white sticky top-10 overflow-hidden",
+          "hidden lg:block h-96 w-80 rounded-md bg-white sticky top-32 overflow-hidden",
           contentClassName
         )}
       >
-        {content[activeCard].content ?? null}
+        <Image src='/assets/guitar.avif' alt="drum" height={500} width={500}
+          className="object-cover h-full w-full"
+        />
       </div>
     </motion.div>
   );

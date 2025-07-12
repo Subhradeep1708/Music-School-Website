@@ -53,7 +53,7 @@ function UpcomingWebinars() {
     // sikho agar more than required datas given ho toh kaise map lagake handle karte hai
 
     return (
-        <div className=' p-12 bg-gray-900'>
+        <div className=' p-12 bg-black'>
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
                 <div className=' text-center'>
                     <h2 className="text-base text-teal-600 font-semibold tracking-wide uppercase">FEATURED WEBINARS</h2>
@@ -70,7 +70,7 @@ function UpcomingWebinars() {
                     ))} />
                 </div>
                 <div className=' mt-10 text-center'><Link href={"/"}
-                    className="px-4 py-2 rounded border border-neutral-600 text-neutral-700 bg-white hover:bg-gray-100 transition duration-200"
+                    className="px-4 py-2 rounded border border-neutral-600 text-neutral-700 bg-white hover:bg-gray-100 transition duration-200 font-semibold"
                 >
                     View All webinars
                 </Link></div>
