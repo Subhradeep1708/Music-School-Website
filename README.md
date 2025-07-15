@@ -58,6 +58,8 @@
 # Clone the repository
 git clone https://github.com/Subhradeep1708/Music-School-Website
 
+cd Music-School-Website
+
 # Install Dependencies
 npm install
 
